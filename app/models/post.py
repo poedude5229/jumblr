@@ -12,6 +12,8 @@ class Post(db.Model):
     source = db.Column(db.String(255))
     type = db.Column(db.String(50))
 
+    
+
     def to_dict(self):
         return {
             'id': self.id,
