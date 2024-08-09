@@ -7,6 +7,11 @@
   src: url("../../../public/jomhuria.ttf");
 }
 
+@font-face {
+  font-family: JosefinSans;
+  src: url("../../../public/JosefinSans-Light.ttf");
+}
+
 h1 {
   color: white;
   font-family: Jomhuria;
@@ -21,7 +26,7 @@ h1 {
 li {
   color: white;
   list-style: none;
-  font-family: ;
+  font-family: JosefinSans;
 }
 
 a {
