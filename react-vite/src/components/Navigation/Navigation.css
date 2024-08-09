@@ -1,3 +1,29 @@
 .profile-dropdown {
   position: absolute;
 }
+
+@font-face {
+  font-family: Jomhuria;
+  src: url("../../../public/jomhuria.ttf");
+}
+
+h1 {
+  color: white;
+  font-family: Jomhuria;
+  font-size: 64px;
+  letter-spacing: 2px;
+  font-weight: 100;
+  position: relative;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+li {
+  color: white;
+  list-style: none;
+  font-family: ;
+}
+
+a {
+  text-decoration: none;
+}
