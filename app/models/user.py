@@ -16,8 +16,10 @@ class User(db.Model, UserMixin):
     bio = db.Column(db.String(255), nullable=True)
 
     blogs = db.relationship("Blog", back_populates="user", cascade="all, delete-orphan")
-    posts = db.relationship("Post", back_populates="post", cascade="all, delete-orphan")
-    jotes = db.relationship("Jote", back_populates="jote", cascade="all, delete-orphan")
+    posts = db.relationship("Post", back_populates="user", cascade="all, delete-orphan")
+    jotes = db.relationship("Jote", back_populates="user", cascade="all, delete-orphan")
+    likes = db.relationship("Like", back_populates="user", cascade="all, delete-orphan")
+
 
     @property
     def password(self):
