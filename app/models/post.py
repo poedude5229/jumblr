@@ -14,6 +14,7 @@ class Post(db.Model):
 
     users = db.relationship("User", back_populates="post")
     blogs = db.relationship("Blog", back_populates="post")
+    jotes = db.relationship("Jote", back_populates="post", cascade="all, delete-orphan")
     def to_dict(self):
         return {
             'id': self.id,
