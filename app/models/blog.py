@@ -11,7 +11,7 @@ class Blog(db.Model):
     name = db.Column(db.String(255), nullable=False)
     blog_icon_url = db.Column(db.String(255), nullable=False)
     blog_banner_url = db.Column(db.String(255))
-    genre = db.Column(db.String(100))
+    genre = db.Column(db.String(100), nullable=False)
 
     users = db.relationship("User", back_populates="blog")
     posts = db.relationship("Post", back_populates="post", cascade="all, delete-orphan")
