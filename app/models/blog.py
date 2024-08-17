@@ -14,7 +14,7 @@ class Blog(db.Model):
     genre = db.Column(db.String(100))
 
     users = db.relationship("User", back_populates="blog")
-
+    posts = db.relationship("Post", back_populates="post", cascade="all, delete-orphan")
     def to_dict(self):
         return {
             'id': self.id,

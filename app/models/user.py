@@ -16,6 +16,8 @@ class User(db.Model, UserMixin):
     bio = db.Column(db.String(255), nullable=True)
 
     blogs = db.relationship("Blog", back_populates="user", cascade="all, delete-orphan")
+    posts = db.relationship("Post", back_populates="post", cascade="all, delete-orphan")
+
 
     @property
     def password(self):
