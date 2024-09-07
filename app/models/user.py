@@ -15,10 +15,10 @@ class User(db.Model, UserMixin):
     hashed_password = db.Column(db.String(255), nullable=False)
     bio = db.Column(db.String(255), nullable=True)
 
-    blogs = db.relationship("Blog", back_populates="user", cascade="all, delete-orphan")
-    posts = db.relationship("Post", back_populates="user", cascade="all, delete-orphan")
-    jotes = db.relationship("Jote", back_populates="user", cascade="all, delete-orphan")
-    likes = db.relationship("Like", back_populates="user", cascade="all, delete-orphan")
+    blog = db.relationship("Blog", back_populates="user", cascade="all, delete-orphan")
+    post = db.relationship("Post", back_populates="user", cascade="all, delete-orphan")
+    jote = db.relationship("Jote", back_populates="user", cascade="all, delete-orphan")
+    like = db.relationship("Like", back_populates="user", cascade="all, delete-orphan")
 
 
     @property

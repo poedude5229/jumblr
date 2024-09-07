@@ -13,8 +13,8 @@ class Blog(db.Model):
     blog_banner_url = db.Column(db.String(255))
     genre = db.Column(db.String(100), nullable=False)
 
-    users = db.relationship("User", back_populates="blog")
-    posts = db.relationship("Post", back_populates="blog", cascade="all, delete-orphan")
+    user = db.relationship("User", back_populates="blog")
+    post = db.relationship("Post", back_populates="blog", cascade="all, delete-orphan")
     def to_dict(self):
         return {
             'id': self.id,

@@ -12,9 +12,10 @@ class Post(db.Model):
     source = db.Column(db.String(255))
     type = db.Column(db.String(50))
 
-    users = db.relationship("User", back_populates="post")
-    blogs = db.relationship("Blog", back_populates="post")
-    jotes = db.relationship("Jote", back_populates="post", cascade="all, delete-orphan")
+    user = db.relationship("User", back_populates="post")
+    blog = db.relationship("Blog", back_populates="post")
+    jote = db.relationship("Jote", back_populates="post", cascade="all, delete-orphan")
+    like = db.relationship("Like", back_populates="post", cascade="all, delete-orphan")
     def to_dict(self):
         return {
             'id': self.id,

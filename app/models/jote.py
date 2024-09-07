@@ -11,8 +11,8 @@ class Jote(db.Model):
     post_id = db.Column(db.Integer, db.ForeignKey('posts.id'), nullable=False)
     body = db.Column(db.String(255))
 
-    users = db.relationship("User", back_populates="jote")
-    posts = db.relationship("Post", back_populates="jote")
+    user = db.relationship("User", back_populates="jote")
+    post = db.relationship("Post", back_populates="jote")
 
     def to_dict(self):
         return {
