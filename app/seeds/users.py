@@ -10,10 +10,15 @@ def seed_users():
         username='HBONE', email='hzebrowski@sidestories.lpotl', password='password', bio="The best comedian both sides of the Mississipp'")
     ben = User(
         username='kisseldawg', email='grant@kissel.ben', password='password', bio="LPOTL is less funny without me")
+    indianajones = User(
+        username="crystalskullman", email="whatsanemail@example.com", password="kalimaaa", bio="I don't know, I'm making this up as I go."
+    )
+
 
     db.session.add(joe)
     db.session.add(henry)
     db.session.add(ben)
+    db.session.add(indianajones)
     db.session.commit()
 
 
