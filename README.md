@@ -10,3 +10,6 @@ Jumblr is a proof of concept spinoff of Tumblr, made by yours truly, Joe Rashid.
 ## Images from Development :)
 ### Database Diagram
 ![Schema png](https://jumblrbucket.s3.amazonaws.com/jumblr-schema.png)
+
+### Homepage Wireframe
+![Jumblr Homepage](https://jumblrbucket.s3.amazonaws.com/Section+1.png)
