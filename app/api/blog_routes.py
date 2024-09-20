@@ -8,3 +8,8 @@ blog_routes = Blueprint('blogs', __name__)
 def blogs():
     blogs = Blog.query.all()
     return {'blogs': [blog.to_dict() for blog in blogs]}
+
+@blog_routes.route('/<type>')
+def blogs_by_type(type):
+    blogs2 = Blog.query.filter(Blog.genre == type)
+    return {'blogs': [blog.to_dict() for blog in blogs2]}
