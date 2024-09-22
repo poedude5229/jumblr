@@ -23,3 +23,8 @@ def blogs_by_type(type):
 def blog_by_id(id):
     blog3 = Blog.query.get(id)
     return {'blog': blog3.to_dict()}
+
+@blog_routes.route('/search/<string:substring>')
+def blog_by_string(substring):
+    blogs3 = Blog.query.filter(Blog.name.ilike(f"%{substring}%")).all()
+    return {'blogs': [blog.to_dict() for blog in blogs3]}
