@@ -28,3 +28,13 @@ def blog_by_id(id):
 def blog_by_string(substring):
     blogs3 = Blog.query.filter(Blog.name.ilike(f"%{substring}%")).all()
     return {'blogs': [blog.to_dict() for blog in blogs3]}
+
+@blog_routes.route('/users/<string:username>')
+def blog_by_owner_username(username):
+    owner = User.query.filter(User.username.ilike(f"%{username}%")).first()
+
+    if not owner:
+        return {'message': 'User not found'}, 404
+    blogs4 = Blog.query.filter(Blog.user_id == owner.id).all()
+
+    return {'blogs': [blog.to_dict() for blog in blogs4]}
